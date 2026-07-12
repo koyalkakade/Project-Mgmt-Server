@@ -32,5 +32,14 @@ function admin(req,res,next){
 
 }
 
+function hod(req,res,next){
 
-module.exports = {auth, admin}
+    if(req.user.role == 'hod'){
+        next()
+    }else{
+        res.status(400).send({msg:"Not authorized"})
+    }
+
+}
+
+module.exports = {auth, admin, hod}

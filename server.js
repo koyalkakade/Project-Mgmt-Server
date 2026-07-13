@@ -26,8 +26,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
  app.use('/project',projectRouter)
 app.use('/user', userRouter)
 app.use('/assign', taskAssignmentRouter)
-
-app.use('/uploads',express.static('uploads'))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 

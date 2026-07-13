@@ -82,7 +82,7 @@ const getUserInfo = async (req, res) => {
 
         // Update image path
         if (userData.imgPath) {
-            userData.imgPath = process.env.SERVER_URL + userData.imgPath;
+            userData.imgPath = userData.imgPath;
         }
 
         // console.log(userData);
